@@ -42,11 +42,24 @@
         <span class="eyebrow">Newsletter para mulheres 40+</span>
         <h1>Não é falta de força de vontade. <em>É hormônio.</em></h1>
         <p class="hero-lead">Depois dos 40, o corpo da mulher muda a forma como regula energia, sono, apetite e peso. A Crisalys explica essa mudança em linguagem clara, com base em ciência e sem culpa.</p>
-        <div class="hero-cta">
-          <a class="btn btn-whats btn-block" href="https://wa.me/554299579860?text=Ol%C3%A1%2C%20quero%20ser%20avisada%20quando%20a%20newsletter%20da%20Crisalys%20abrir." rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>Quero ser avisada no WhatsApp</a>
+        <form class="optin" id="inscricao" method="post" action="https://mkt.crisalys.life/form/submit?formId=1" enctype="multipart/form-data">
+          <p class="optin-error" id="optin-error" role="alert" hidden>Não foi possível concluir a inscrição. Confira os campos e tente de novo.</p>
+          <label for="f-nome">Seu primeiro nome</label>
+          <input id="f-nome" type="text" name="mauticform[primeiro_nome]" autocomplete="given-name" required maxlength="60">
+          <label for="f-email">Seu melhor e-mail</label>
+          <input id="f-email" type="email" name="mauticform[email]" autocomplete="email" inputmode="email" required maxlength="120">
+          <label class="consent" for="f-consent">
+            <input id="f-consent" type="checkbox" name="mauticform[consentimento][]" value="sim" required>
+            <span>Concordo em receber e-mails da Crisalys e li a <a href="/privacidade/">Política de Privacidade</a>.</span>
+          </label>
+          <input type="hidden" name="mauticform[formId]" value="1">
+          <input type="hidden" name="mauticform[return]" value="https://crisalys.life/?erro=1">
+          <input type="hidden" name="mauticform[formName]" value="inscricaonewslettercrisalys">
+          <button class="btn btn-primary btn-block" type="submit" name="mauticform[enviar]" value="1">Quero receber a newsletter</button>
           <p class="free-tag">Newsletter <strong>100% gratuita</strong></p>
-        </div>
-        <p class="microcopy" style="margin-top:14px">As inscrições abrem em breve. Avise pelo WhatsApp e chamamos você quando abrir.</p>
+          <p class="microcopy">Você confirma por e-mail e pode sair quando quiser.</p>
+        </form>
+        <script>if (location.search.indexOf("erro=1") > -1) { document.getElementById("optin-error").hidden = false; }</script>
       </div>
     </section>
 
@@ -97,10 +110,10 @@
 
     <section class="section section-sage cta-band" aria-labelledby="t-cta">
       <div class="wrap">
-        <h2 id="t-cta">Quer receber quando abrir?</h2>
+        <h2 id="t-cta">Pronta para começar?</h2>
         <p class="lede">Newsletter gratuita. Você decide se fica.</p>
-        <a class="btn btn-whats" href="https://wa.me/554299579860?text=Ol%C3%A1%2C%20quero%20ser%20avisada%20quando%20a%20newsletter%20da%20Crisalys%20abrir." rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>Quero ser avisada no WhatsApp</a>
-        <p class="microcopy">Ou escreva para <a href="mailto:suporte@crisalys.life">suporte@crisalys.life</a></p>
+        <a class="btn btn-light" href="#inscricao">Quero receber a newsletter</a>
+        <p class="microcopy">Dúvidas? <a href="mailto:suporte@crisalys.life">suporte@crisalys.life</a></p>
       </div>
     </section>
   </main>
